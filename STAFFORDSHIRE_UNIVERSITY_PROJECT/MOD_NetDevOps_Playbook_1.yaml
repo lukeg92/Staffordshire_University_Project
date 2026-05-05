@@ -10,6 +10,25 @@
           All configurations are for demonstration purposes 
           This does not reflect operational networks
           =================================================
+
+- hosts: switches
+  tasks:
+    - name: Create VLANS on MOD switches
+      cisco.ios.ios_vlans:
+        config:
+          - vlan_id: 10
+            name: STAFFORDSHIRE_VLAN
+            shutdown: disabled
+          - vlan_id: 20
+            name: UNIVERSITY_VLAN
+            shutdown: disabled
+          - vlan_id: 30
+            name: PROJECT_VLAN
+            shutdown: disabled
+
+
+- hosts: ios
+  tasks:
     - name: Copy running config to startup config after modifications
       cisco.ios.ios_config:
         save_when: modified
