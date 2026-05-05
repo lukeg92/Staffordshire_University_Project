@@ -49,13 +49,19 @@
         - Ethernet0/1
         - Ethernet0/2
         - Ethernet0/3
+    - name: Configure OSPF on MOD Routers
+      cisco.ios.ios_ospfv2:
+        config: 
+          processes:
+            - process_id: 1
+              network:
+                - address: 192.168.1.0
+                  wildcard_bits: 0.0.0.255
+                  area: 0
 
 - name: All MOD network device configurations
   hosts: ios
   tasks:
-    - name: Copy running config to startup config after modifications
-      cisco.ios.ios_config:
-        save_when: modified
     - name: Configure login message of the day on all MOD network devices
       cisco.ios.ios_banner:
         banner: login
@@ -66,3 +72,6 @@
           All configurations are for demonstration purposes 
           This does not reflect operational networks
           =================================================
+    - name: Copy running config to startup config after modifications
+      cisco.ios.ios_config:
+        save_when: modified
