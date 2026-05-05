@@ -1,0 +1,9 @@
+/.venv
+/border_routers.yaml
+/demo_playbook.yaml
+/interfaces.yaml
+/interfaces_test.yaml
+/site-a-test.ini
+/site-a.ini
+/vlans.yaml
+/vlans_test.yaml
