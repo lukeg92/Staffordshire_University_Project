@@ -1,17 +1,5 @@
-- hosts: ios
-  tasks:
-    - name: Configure login message of the day on all MOD network devices
-      cisco.ios.ios_banner:
-        banner: login
-        text: |
-          =================================================
-          Welcome to the MOD NetDevOps Project
-          All devices in this lab are configured by Ansible
-          All configurations are for demonstration purposes 
-          This does not reflect operational networks
-          =================================================
-
-- hosts: switches
+- name: All MOD Switch configurations
+  hosts: switches
   tasks:
     - name: Create VLANS on MOD switches
       cisco.ios.ios_vlans:
@@ -25,10 +13,56 @@
           - vlan_id: 30
             name: PROJECT_VLAN
             shutdown: disabled
+    - name: Configure layer 2 switchports
+      cisco.ios.ios_l2_interfaces:
+        config:
+          - name: Ethernet0/1
+            mode: access
+            access:
+              vlan: 10
+          - name: Ethernet0/2
+            mode: trunk
+            trunk:
+              allowed_vlans: 10,20,30
+              encapsulation: dot1q
+          - name: Ethernet0/3
+            mode: trunk
+            trunk:
+              allowed_vlans: 10,20,30
+              encapsulation: dot1q
 
+- name: All MOD Router configurations
+  hosts: routers
+  tasks:
+    - name: Configure MOD Router Eth0/1 IP Address from inventory
+      cisco.ios.ios_l3_interfaces:
+        config:
+          - name: Ethernet0/1
+            ipv4:
+              - address: "{{ eth1addr }}"
+    - name: Enable MOD Router Eth0/1 interfaces
+      cisco.ios.ios_interfaces: 
+        config:
+          - name: "{{ item }}"
+            enabled: true
+      loop:
+        - Ethernet0/1
+        - Ethernet0/2
+        - Ethernet0/3
 
-- hosts: ios
+- name: All MOD network device configurations
+  hosts: ios
   tasks:
     - name: Copy running config to startup config after modifications
       cisco.ios.ios_config:
         save_when: modified
+    - name: Configure login message of the day on all MOD network devices
+      cisco.ios.ios_banner:
+        banner: login
+        text: |
+          =================================================
+          Welcome to the MOD NetDevOps Project
+          All devices in this lab are configured by Ansible
+          All configurations are for demonstration purposes 
+          This does not reflect operational networks
+          =================================================
