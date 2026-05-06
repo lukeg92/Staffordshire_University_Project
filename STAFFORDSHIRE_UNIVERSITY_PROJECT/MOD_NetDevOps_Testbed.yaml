@@ -1,0 +1,34 @@
+---
+testbed:
+  credentials:
+    default:
+      username: staffordshire
+      password: university
+    enable:
+      password: staffordshire_university
+
+devices:
+  MOD-R1:
+    os: ios
+    connections:
+      vty:
+        protocol: ssh
+        ip: 192.168.200.150
+  MOD-R2:
+    os: ios
+    connections:
+      vty:
+        protocol: ssh
+        ip: 192.168.200.151
+  MOD-S1:
+    os: ios
+    connections:
+      vty:
+        protocol: ssh
+        ip: 192.168.200.152
+  MOD-S2:
+    os: ios
+    connections:
+      vty:
+        protocol: ssh
+        ip: 192.168.200.153
