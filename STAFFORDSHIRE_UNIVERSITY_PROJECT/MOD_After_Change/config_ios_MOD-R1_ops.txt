@@ -1,0 +1,60 @@
+{
+  "=================================================": {},
+  "All configurations are for demonstration purposes": {},
+  "All devices in this lab are configured by Ansible": {},
+  "Building configuration...": {},
+  "Current configuration : 1640 bytes": {},
+  "This does not reflect operational networks": {},
+  "Welcome to the MOD NetDevOps Project": {},
+  "^C": {},
+  "aaa authentication login default local": {},
+  "aaa authorization exec default local": {},
+  "aaa new-model": {},
+  "aaa session-id common": {},
+  "banner login ^C": {},
+  "boot-end-marker": {},
+  "boot-start-marker": {},
+  "control-plane": {},
+  "enable secret 9 $9$JcWxME2mkdx3VE$rp9HL488OpnpBffeO/Ru4ULY6GMwcPgqY0f.SHFFnuY": {},
+  "end": {},
+  "hostname MOD-R1": {},
+  "interface Ethernet0/0": {
+    "ip address 192.168.200.150 255.255.255.0": {}
+  },
+  "interface Ethernet0/1": {
+    "ip address 192.168.1.1 255.255.255.0": {}
+  },
+  "interface Ethernet0/2": {
+    "no ip address": {}
+  },
+  "interface Ethernet0/3": {
+    "no ip address": {}
+  },
+  "ip cef": {},
+  "ip domain name staffordshire_university.com": {},
+  "ip forward-protocol nd": {},
+  "ip forward-protocol udp": {},
+  "ip http secure-server": {},
+  "ip http server": {},
+  "ip route 0.0.0.0 0.0.0.0 192.168.200.138": {},
+  "ip ssh bulk-mode 131072": {},
+  "line aux 0": {},
+  "line con 0": {
+    "logging synchronous": {}
+  },
+  "line vty 0 4": {
+    "transport input ssh": {}
+  },
+  "login on-success log": {},
+  "memory free low-watermark processor 79983": {},
+  "no ipv6 cef": {},
+  "no logging btrace": {},
+  "router ospf 1": {
+    "network 192.168.1.0 0.0.0.255 area 0": {}
+  },
+  "service timestamps debug datetime msec": {},
+  "service timestamps log datetime msec": {},
+  "spanning-tree mode rapid-pvst": {},
+  "username Staffordshire privilege 15 secret 9 $9$4B1WP1S6K7yBb.$DgQekb4poa2hAJj5TxJflRImtgds413EJCFsbFWhACA": {},
+  "version 17.16": {}
+}

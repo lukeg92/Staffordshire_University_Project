@@ -1,0 +1,127 @@
++++ MOD-S1 with via 'vty': executing command 'show running-config' +++
+show running-config
+Building configuration...
+
+Current configuration : 1854 bytes
+!
+! Last configuration change at 12:46:41 UTC Wed May 6 2026
+!
+version 17.16
+service timestamps debug datetime msec
+service timestamps log datetime msec
+!
+hostname MOD-S1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+aaa new-model
+!
+!
+aaa authentication login default local
+aaa authorization exec default local 
+!
+!
+aaa session-id common
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip audit notify log
+ip audit po max-events 100
+ip domain name staffordshire_university.com
+ip cef
+login on-success log
+no ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+memory free low-watermark processor 79497
+!
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+enable secret 9 $9$afXBOOunszhzbU$c4sqPoqXFZoEMDw2TsxQYf8nX9OoYDrI9g5L9FCs9yo
+!
+username Staffordshire privilege 15 secret 9 $9$bvO5fUmzfaaKKU$DUDOLMlAm1WAjn/PnSEHg2H7yHATXXktdGfxuN965mI
+!
+vlan internal allocation policy ascending
+!
+!
+!
+!
+!
+interface Ethernet0/0
+ no switchport
+ ip address 192.168.200.152 255.255.255.0
+!
+interface Ethernet0/1
+ switchport access vlan 10
+ switchport mode access
+!
+interface Ethernet0/2
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 10,20,30
+ switchport mode trunk
+!
+interface Ethernet0/3
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 10,20,30
+ switchport mode trunk
+!
+ip forward-protocol nd
+ip forward-protocol udp
+!
+!
+ip http server
+ip http secure-server
+ip ssh bulk-mode 131072
+ip route 0.0.0.0 0.0.0.0 192.168.200.138
+!
+no logging btrace
+!
+!
+!
+!
+!
+control-plane
+!
+!
+banner login ^C
+=================================================
+Welcome to the MOD NetDevOps Project
+All devices in this lab are configured by Ansible
+All configurations are for demonstration purposes 
+This does not reflect operational networks
+=================================================
+^C
+!
+line con 0
+ logging synchronous
+line aux 0
+line vty 0 4
+ transport input ssh
+!
+!
+end
+
+MOD-S1#

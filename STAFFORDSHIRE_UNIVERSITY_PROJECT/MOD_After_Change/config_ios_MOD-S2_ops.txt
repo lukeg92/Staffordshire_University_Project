@@ -1,0 +1,67 @@
+{
+  "=================================================": {},
+  "All configurations are for demonstration purposes": {},
+  "All devices in this lab are configured by Ansible": {},
+  "Building configuration...": {},
+  "Current configuration : 1854 bytes": {},
+  "This does not reflect operational networks": {},
+  "Welcome to the MOD NetDevOps Project": {},
+  "^C": {},
+  "aaa authentication login default local": {},
+  "aaa authorization exec default local": {},
+  "aaa new-model": {},
+  "aaa session-id common": {},
+  "banner login ^C": {},
+  "boot-end-marker": {},
+  "boot-start-marker": {},
+  "control-plane": {},
+  "enable secret 9 $9$H16JSeYBjs/UEU$y3jG87RFqbuGIfbLDktbNDbL0QEyfMbBEmtvze3rESQ": {},
+  "end": {},
+  "hostname MOD-S2": {},
+  "interface Ethernet0/0": {
+    "ip address 192.168.200.153 255.255.255.0": {},
+    "no switchport": {}
+  },
+  "interface Ethernet0/1": {
+    "switchport access vlan 10": {},
+    "switchport mode access": {}
+  },
+  "interface Ethernet0/2": {
+    "switchport mode trunk": {},
+    "switchport trunk allowed vlan 10,20,30": {},
+    "switchport trunk encapsulation dot1q": {}
+  },
+  "interface Ethernet0/3": {
+    "switchport mode trunk": {},
+    "switchport trunk allowed vlan 10,20,30": {},
+    "switchport trunk encapsulation dot1q": {}
+  },
+  "ip audit notify log": {},
+  "ip audit po max-events 100": {},
+  "ip cef": {},
+  "ip domain name staffordshire_university.com": {},
+  "ip forward-protocol nd": {},
+  "ip forward-protocol udp": {},
+  "ip http secure-server": {},
+  "ip http server": {},
+  "ip route 0.0.0.0 0.0.0.0 192.168.200.138": {},
+  "ip ssh bulk-mode 131072": {},
+  "line aux 0": {},
+  "line con 0": {
+    "logging synchronous": {}
+  },
+  "line vty 0 4": {
+    "transport input ssh": {}
+  },
+  "login on-success log": {},
+  "memory free low-watermark processor 79497": {},
+  "no ipv6 cef": {},
+  "no logging btrace": {},
+  "service timestamps debug datetime msec": {},
+  "service timestamps log datetime msec": {},
+  "spanning-tree extend system-id": {},
+  "spanning-tree mode rapid-pvst": {},
+  "username Staffordshire privilege 15 secret 9 $9$9nZPDZ7rJMocB.$TlksBlFUVElEvup2RFFyvyhPcVGkGcWSCwPZ7rBg.z.": {},
+  "version 17.16": {},
+  "vlan internal allocation policy ascending": {}
+}

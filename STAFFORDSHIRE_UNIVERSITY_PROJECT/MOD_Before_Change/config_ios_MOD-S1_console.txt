@@ -1,0 +1,163 @@
++++ MOD-S1 with via 'vty': executing command 'show running-config' +++
+show running-config
+Building configuration...
+
+Current configuration : 4079 bytes
+!
+! Last configuration change at 11:10:22 UTC Wed May 6 2026
+!
+version 17.16
+service timestamps debug datetime msec
+service timestamps log datetime msec
+!
+hostname MOD-S1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+aaa new-model
+!
+!
+aaa authentication login default local
+aaa authorization exec default local if-authenticated 
+!
+!
+aaa session-id common
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip audit notify log
+ip audit po max-events 100
+ip domain name staffordshire_university.com
+ip cef
+login on-success log
+no ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-131184647
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-131184647
+ revocation-check none
+ rsakeypair TP-self-signed-131184647
+ hash sha512
+!
+!
+crypto pki certificate chain TP-self-signed-131184647
+ certificate self-signed 01
+  3082032E 30820216 A0030201 02020101 300D0609 2A864886 F70D0101 0D050030 
+  30312E30 2C060355 04030C25 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 31333131 38343634 37301E17 0D323630 35303530 35303935 
+  375A170D 33363035 30343035 30393537 5A303031 2E302C06 03550403 0C25494F 
+  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3133 31313834 
+  36343730 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02 
+  82010100 A7F01E3E 768A0B21 1337FA73 363FB59F 0ABD5C96 09170F51 419757ED 
+  A7248BCE C226BD8B 39003539 EFAE60FF F20AA258 65797B1D 7415EABC E64C556F 
+  F77EE49C 0A481BF4 3001E669 753A66A1 0B029B79 F142942B 47C13823 95A5F8AB 
+  B79C5644 B8DB54CC 76F11E0A 4B9EB2CF A1363B71 501F2761 435C110C CBC4F3C4 
+  A198CD4B EC31C31A 62FB9DB7 34D6285C 29395649 3DCE71DF 39DF6E8D 4EB99A0B 
+  9BEDB6E0 1FBE90DF 622F22AB 65428114 E0749F05 D059AB23 CB17F9C1 9803B1CC 
+  5BA0237A 93667D2E 4CFD1F14 8CBEB70D 7627DA0F AC1A57B5 B07F80B6 8A68AF63 
+  D3B00C6E D114064B A3FF865A 5D277452 8A165841 CB768608 82BF6B68 C76E53E8 
+  DDD6C1FB 02030100 01A35330 51301D06 03551D0E 04160414 85B95FED FBD52543 
+  B78CB7FA B370D0DC 1C749BFA 301F0603 551D2304 18301680 1485B95F EDFBD525 
+  43B78CB7 FAB370D0 DC1C749B FA300F06 03551D13 0101FF04 05300301 01FF300D 
+  06092A86 4886F70D 01010D05 00038201 01003EE8 94EA042B 0E4A359E 83F3A7B2 
+  32C1FE28 8A13380B 6FC0781A 07933FF7 6BA8BEA7 A786EB77 77191AC3 E35243DE 
+  B7335389 086F764A 6EFD8D47 F7AAE6CB 0C95217E 906FFF50 F42724F1 FD21FF5E 
+  057815A3 80517DE0 5252ABD8 7672AB48 2B4073E7 B39EE06C EBD0101D F1AF780C 
+  9EEE279D 7B57800F 0E9737C8 F0F06461 BDF28585 0E0264FC 502C2A64 3496B5B1 
+  65994295 7DC1D648 95B2C608 C189CB9F 106AAE2C 90056C72 3BF8A4B2 C07D6EBB 
+  C5967A77 9545DE0A 43C51D47 89E9D288 7B62C31E 900A41F0 D364B846 5974DF69 
+  9F18A92C B8091728 4AC160C0 53CB62A8 A3CD5D3D C93C5509 B41567EB 566329C7 
+  6AACBDE5 3DE99073 252C3153 39D67B3D 3321
+  	quit
+!
+!
+memory free low-watermark processor 79497
+!
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+enable secret 9 $9$3.OiYvskM0R8kk$aUxcYrD9RRW5ZbLmcAi596Npk4LIlLPX.MNfNHph5qY
+!
+username staffordshire privilege 15 secret 9 $9$VYPfi/v2sV0MLU$8pmJCMwazdDL5iLiReOZ5kQn6v7HOeu0fZJMu5rSVyo
+!
+vlan internal allocation policy ascending
+!
+!
+!
+!
+!
+interface Ethernet0/0
+ no switchport
+ ip address 192.168.200.152 255.255.255.0
+!
+interface Ethernet0/1
+ switchport access vlan 10
+ switchport mode access
+!
+interface Ethernet0/2
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 10,20,30
+ switchport mode trunk
+!
+interface Ethernet0/3
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 10,20,30
+ switchport mode trunk
+!
+ip forward-protocol nd
+ip forward-protocol udp
+!
+!
+ip http server
+ip http secure-server
+ip ssh bulk-mode 131072
+ip route 0.0.0.0 0.0.0.0 192.168.200.138
+!
+no logging btrace
+!
+!
+!
+!
+!
+control-plane
+!
+!
+banner login ^C
+=================================================
+Welcome to the MOD NetDevOps Project
+All devices in this lab are configured by Ansible
+All configurations are for demonstration purposes 
+This does not reflect operational networks
+=================================================
+^C
+!
+line con 0
+ logging synchronous
+line aux 0
+line vty 0 4
+ transport input ssh
+!
+!
+end
+
+MOD-S1#

@@ -1,0 +1,79 @@
+
+2026-05-06 14:05:00,703: %UNICON-INFO: +++ MOD-R2 logfile MOD_After_Change/connection_MOD-R2.txt +++
+
+2026-05-06 14:05:00,703: %UNICON-INFO: +++ Unicon plugin ios (unicon.plugins.ios) +++
+
+=================================================
+Welcome to the MOD NetDevOps Project
+All devices in this lab are configured by Ansible
+All configurations are for demonstration purposes 
+This does not reflect operational networks
+=================================================
+(staffordshire@192.168.200.151) Password: 
+
+2026-05-06 14:05:00,927: %UNICON-INFO: +++ connection to spawn: ssh -l staffordshire 192.168.200.151, id: 133881159249808 +++
+
+2026-05-06 14:05:00,928: %UNICON-ERROR: Use log_file() service for setting log file
+
+2026-05-06 14:05:00,928: %UNICON-INFO: connection to MOD-R2
+
+
+
+
+MOD-R2#
+
+2026-05-06 14:05:01,091: %UNICON-INFO: +++ MOD-R2 with via 'vty': enable +++
+
+2026-05-06 14:05:01,091: %UNICON-INFO: Storing credentials from default as current_credentials
+
+2026-05-06 14:05:01,092: %UNICON-INFO: +++ initializing handle +++
+
+2026-05-06 14:05:01,093: %UNICON-INFO: +++ MOD-R2 with via 'vty': enable +++
+
+2026-05-06 14:05:01,281: %UNICON-INFO: +++ MOD-R2 with via 'vty': executing command 'term length 0' +++
+term length 0
+MOD-R2#
+
+2026-05-06 14:05:01,645: %UNICON-INFO: +++ MOD-R2 with via 'vty': executing command 'term width 0' +++
+term width 0
+MOD-R2#
+
+2026-05-06 14:05:01,955: %UNICON-INFO: +++ MOD-R2 with via 'vty': executing command 'show version' +++
+show version
+Cisco IOS Software [IOSXE], Linux Software (X86_64BI_LINUX-ADVENTERPRISEK9-M), Version 17.16.1a, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2024 by Cisco Systems, Inc.
+Compiled Thu 19-Dec-24 17:54 by mcpre
+
+ROM: Bootstrap program is Linux
+
+MOD-R2 uptime is 30 minutes
+System returned to ROM by unknown reload cause - suspect boot_data[BOOT_COUNT] 0x9, BOOT_COUNT 0, BOOTDATA 19
+System image file is "unix:/x86_64_crb_linux-adventerprisek9-ms.iol"
+Last reload reason: Unknown reason
+
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+Linux Unix (i686) processor with 799831K bytes of memory.
+Processor board ID 131184655
+4 Ethernet interfaces
+256K bytes of NVRAM.
+
+Configuration register is 0x0
+
+MOD-R2#

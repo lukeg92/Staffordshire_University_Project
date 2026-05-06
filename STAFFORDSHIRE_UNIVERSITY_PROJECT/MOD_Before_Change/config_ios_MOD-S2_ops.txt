@@ -1,0 +1,106 @@
+{
+  "=================================================": {},
+  "All configurations are for demonstration purposes": {},
+  "All devices in this lab are configured by Ansible": {},
+  "Building configuration...": {},
+  "Current configuration : 4079 bytes": {},
+  "This does not reflect operational networks": {},
+  "Welcome to the MOD NetDevOps Project": {},
+  "^C": {},
+  "aaa authentication login default local": {},
+  "aaa authorization exec default local if-authenticated": {},
+  "aaa new-model": {},
+  "aaa session-id common": {},
+  "banner login ^C": {},
+  "boot-end-marker": {},
+  "boot-start-marker": {},
+  "control-plane": {},
+  "crypto pki certificate chain TP-self-signed-131184648": {
+    "certificate self-signed 01": {
+      "04A8F26A 445AD715 1D235389 3E300F06 03551D13 0101FF04 05300301 01FF300D": {},
+      "06092A86 4886F70D 01010D05 00038201 01007303 2D44C199 1C38575D EC403FB3": {},
+      "07D806CF 914F1F04 1856A2A2 9536A4CD 87C50343 054C2C43 F39F2F14 746F2324": {},
+      "0F95203A 661F954D 54D1FD72 DEA76BCE F6D454FB 69DBC3EA 5B74CBAC F3C29403": {},
+      "26E95288 888903FF D9858767 3E680518 47B1BE2D 23D04438 1595AE9E 4909796F": {},
+      "30312E30 2C060355 04030C25 494F532D 53656C66 2D536967 6E65642D 43657274": {},
+      "305A170D 33363035 30343035 31303030 5A303031 2E302C06 03550403 0C25494F": {},
+      "3082032E 30820216 A0030201 02020101 300D0609 2A864886 F70D0101 0D050030": {},
+      "36343830 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02": {},
+      "4EA2CB35 98866741 F1BE6D7B FE1D8F09 F855F1E1 9B7288F5 AAFC00E7 CBECD9F0": {},
+      "532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3133 31313834": {},
+      "69666963 6174652D 31333131 38343634 38301E17 0D323630 35303530 35313030": {},
+      "770347A3 E2AD14FD 41478DEC 25EEE727 93E2C14C 7D5C5E3F A8AD3EA6 77B8640B": {},
+      "795B0B6E 9C1FA8EC 20F27128 D5740A08 A27A5AB2 100F190F 283B9067 28F5754A": {},
+      "82010100 B57222F7 EE14E3B6 71AD5EA3 950B2DA0 8D091268 613DE121 7EEE19D2": {},
+      "8BD1BD33 95FA6BB9 47A09B1A 83E50204 5377D9DC D7CB4A35 8F97BFCA 49C034AD": {},
+      "92B9EC0D 593ABC57 9744D4E9 510B503C 79D40062 707B2CD4 E670F494 AD5FA318": {},
+      "9593ECBB B0FC109A C827CB24 0158E31C 02752643 B10356A7 B49DDA92 D80F99CC": {},
+      "A8F26A44 5AD7151D 2353893E 301F0603 551D2304 18301680 14F31B3D D8B0FD34": {},
+      "AE0A78F2 13228716 D71B160A E6D2E13B 490BBE93 80297197 B7F292F3 E75FE6F7": {},
+      "C2A803C6 FBAF6395 911745AE D126BBEB 216C3E71 779BEA1F 767E5A4E 520E6B5D": {},
+      "D50B1354 D72CA176 58AA85BC D86D622B 8554": {
+        "quit": {}
+      },
+      "E7888875 02030100 01A35330 51301D06 03551D0E 04160414 F31B3DD8 B0FD3404": {},
+      "F26D1A79 F0D46C12 E2ED693D A5FCACE0 AC0014DF 1A173FD9 C566C5AF 684A668F": {},
+      "F6E9FE15 B0CF5045 2E6377BC 5C5C13D0 67AC81F3 37808664 F7393383 D9F21464": {},
+      "FD364711 BD7E5386 66642931 419F8CE1 7658511A 5E3195B0 2086FEFE FDEB83AC": {}
+    }
+  },
+  "crypto pki trustpoint TP-self-signed-131184648": {
+    "enrollment selfsigned": {},
+    "hash sha512": {},
+    "revocation-check none": {},
+    "rsakeypair TP-self-signed-131184648": {},
+    "subject-name cn=IOS-Self-Signed-Certificate-131184648": {}
+  },
+  "enable secret 9 $9$H/rvoVY.OGeSMk$F4GRux8bhQbH7JklRc8E16SyEwnCetmELT1AEMnc/Lw": {},
+  "end": {},
+  "hostname MOD-S2": {},
+  "interface Ethernet0/0": {
+    "ip address 192.168.200.153 255.255.255.0": {},
+    "no switchport": {}
+  },
+  "interface Ethernet0/1": {
+    "switchport access vlan 10": {},
+    "switchport mode access": {}
+  },
+  "interface Ethernet0/2": {
+    "switchport mode trunk": {},
+    "switchport trunk allowed vlan 10,20,30": {},
+    "switchport trunk encapsulation dot1q": {}
+  },
+  "interface Ethernet0/3": {
+    "switchport mode trunk": {},
+    "switchport trunk allowed vlan 10,20,30": {},
+    "switchport trunk encapsulation dot1q": {}
+  },
+  "ip audit notify log": {},
+  "ip audit po max-events 100": {},
+  "ip cef": {},
+  "ip domain name staffordshire_university.com": {},
+  "ip forward-protocol nd": {},
+  "ip forward-protocol udp": {},
+  "ip http secure-server": {},
+  "ip http server": {},
+  "ip route 0.0.0.0 0.0.0.0 192.168.200.138": {},
+  "ip ssh bulk-mode 131072": {},
+  "line aux 0": {},
+  "line con 0": {
+    "logging synchronous": {}
+  },
+  "line vty 0 4": {
+    "transport input ssh": {}
+  },
+  "login on-success log": {},
+  "memory free low-watermark processor 79497": {},
+  "no ipv6 cef": {},
+  "no logging btrace": {},
+  "service timestamps debug datetime msec": {},
+  "service timestamps log datetime msec": {},
+  "spanning-tree extend system-id": {},
+  "spanning-tree mode rapid-pvst": {},
+  "username staffordshire privilege 15 secret 9 $9$yfKIwVfFW9fSOU$YtXsWC4ptK8U55gryjIb2SIjWC0llmoXVq97X.MqRhg": {},
+  "version 17.16": {},
+  "vlan internal allocation policy ascending": {}
+}

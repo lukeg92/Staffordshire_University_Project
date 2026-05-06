@@ -1,0 +1,137 @@
++++ MOD-R2 with via 'vty': executing command 'show running-config' +++
+show running-config
+Building configuration...
+
+Current configuration : 1623 bytes
+!
+! Last configuration change at 12:48:33 UTC Wed May 6 2026
+!
+version 17.16
+service timestamps debug datetime msec
+service timestamps log datetime msec
+!
+hostname MOD-R2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+aaa new-model
+!
+!
+aaa authentication login default local
+aaa authorization exec default local 
+!
+aaa session-id common
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip domain name staffordshire_university.com
+ip cef
+login on-success log
+no ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+memory free low-watermark processor 79983
+!
+!
+spanning-tree mode rapid-pvst
+!
+enable secret 9 $9$QHcu5i.NruedaE$4PYxIfiRM7VXJUtx8oNWmie5kOxMEEtBbDko2pv5LIg
+!
+username Staffordshire privilege 15 secret 9 $9$dcLYQ51gsFM/YE$faV05eZy6JFU8DUwUjPpGLjhwakcGOzpJfQoKgIjOXs
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Ethernet0/0
+ ip address 192.168.200.151 255.255.255.0
+!
+interface Ethernet0/1
+ ip address 192.168.1.2 255.255.255.0
+!
+interface Ethernet0/2
+ no ip address
+!
+interface Ethernet0/3
+ no ip address
+!
+router ospf 1
+ network 192.168.1.0 0.0.0.255 area 0
+!
+ip forward-protocol nd
+ip forward-protocol udp
+!
+!
+ip http server
+ip http secure-server
+ip route 0.0.0.0 0.0.0.0 192.168.200.138
+ip ssh bulk-mode 131072
+no logging btrace
+!
+!
+!
+!
+!
+control-plane
+!
+!
+banner login ^C
+=================================================
+Welcome to the MOD NetDevOps Project
+All devices in this lab are configured by Ansible
+All configurations are for demonstration purposes 
+This does not reflect operational networks
+=================================================
+^C
+!
+line con 0
+ logging synchronous
+line aux 0
+line vty 0 4
+ transport input ssh
+!
+!
+!
+!
+end
+
+MOD-R2#
