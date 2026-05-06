@@ -1,4 +1,5 @@
 - name: All MOD Switch configurations
+  gather_facts: no
   hosts: switches
   tasks:
     - name: Create VLANS on MOD switches
@@ -32,6 +33,7 @@
               encapsulation: dot1q
 
 - name: All MOD Router configurations
+  gather_facts: no
   hosts: routers
   tasks:
     - name: Configure MOD Router Eth0/1 IP Address from inventory
@@ -60,6 +62,7 @@
                   area: 0
 
 - name: All MOD network device configurations
+  gather_facts: no
   hosts: ios
   tasks:
     - name: Configure login message of the day on all MOD network devices
