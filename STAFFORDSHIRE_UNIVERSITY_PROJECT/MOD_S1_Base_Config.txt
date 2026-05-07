@@ -1,0 +1,14 @@
+hostname MOD-S1
+username Staffordshire privilege 15 secret university
+enable secret staffordshire_university
+ip domain name staffordshire_university.com
+ip ssh version 2
+crypto key generate rsa modu 2048
+aaa new-model
+aaa authentication login default local
+aaa authorization exec default local
+ip route 0.0.0.0 0.0.0.0 192.168.200.138
+int eth0/0
+no switchport
+no shut
+ip add 192.168.200.152 255.255.255.0
